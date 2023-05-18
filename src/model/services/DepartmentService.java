@@ -3,9 +3,13 @@ package model.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.dao.DaoFactory;
 import model.entities.Department;
 
 public class DepartmentService {
+	
+	//injeção de dependência
+	private DepartmentDAO dao = DaoFactory.createDepartmentDao();
 
 	public List<Department> findAll(){
 		List<Department> list = new ArrayList<>();
